@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#050204"><title>A garden for you</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<a class="skip" href="#open">Skip to the invitation</a>
+<header><div class="song"><span>I Love You</span><small>— Fontaines D.C.</small></div><div class="header-line"></div><span class="dedication">a little universe, just for you</span><button id="settings" class="icon" aria-label="Open music and lyrics settings">♫</button></header>
+<main>
+<section id="garden" aria-label="An ASCII garden for you">
+<div class="scene"><canvas id="art" aria-label="A rotating pink ASCII heart surrounded by blooming character flowers" role="img"></canvas><div class="invitation"><p class="eyebrow">EVERY CHARACTER, A LITTLE LOVE</p><button id="open" class="assemble" aria-label="Open my heart"><span id="button-letters" aria-hidden="true"></span></button><p class="whisper" id="invitation-hint">something I’ve been meaning to tell you</p></div></div>
+<div class="lyrics-panel"><div class="ornament" aria-hidden="true">* &nbsp; ♡ &nbsp; *</div><p id="lyric" class="lyric">When the world goes quiet,<br><span>I still think of you.</span></p><p id="lyric-caption" class="eyebrow">A GARDEN OF WORDS, WAITING FOR YOU</p><button id="read-letter" class="text-button" hidden>There’s a letter for you &nbsp; →</button></div>
+</section>
+<section id="letter-screen" hidden aria-labelledby="letter-title"><div class="letter-top"><button id="back" class="text-button">← Back to the garden</button><span class="eyebrow">FOR YOUR EYES ONLY</span></div><div class="letter-layout"><pre class="letter-flower" aria-hidden="true">        .     .
+    .:::.   .:::.
+   :*@@@*: :*@@@*:
+    '*@@@*@*@@@*'
+ .::::. '*@*' .::::.
+:*@@@@@*:@#@:*@@@@@*:
+ '::::' .*@*. '::::'
+      :*@@@*:
+       '::: '
+         |
+    .::. | .::.
+   '::::\|/::::'
+         |
+         |
+    . . :|: . .</pre><article><p class="eyebrow">SOME THINGS DESERVE MORE THAN A MESSAGE</p><h1 id="letter-title">My favourite place<br>is with you.</h1><div id="letter-body" class="letter-body"></div><p id="signature" class="signature"></p><button id="finish-letter" class="text-button">Show the whole letter</button><p class="letter-end" aria-hidden="true">+ · · · · · ♡ · · · · · +</p></article></div></section>
+</main>
+<footer class="player"><div id="local-controls"><button id="play" class="icon" aria-label="Play music">▶</button><span id="elapsed">00:00</span><input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Song progress" disabled><span id="duration">--:--</span><button id="mute" class="icon" aria-label="Mute music">♪</button><input id="volume" type="range" min="0" max="1" step="0.01" value="0.65" aria-label="Volume"><button id="audio-settings" class="text-button small">Add your song</button></div><p id="caption"></p><p id="status" role="status">Your song. Your words. Your little universe.</p></footer>
+<audio id="audio" preload="metadata"></audio>
+<dialog id="setup"><form method="dialog"><button class="close icon" aria-label="Close settings">×</button></form><p class="eyebrow">MAKE IT YOURS</p><h2>The soundtrack to us.</h2><p>Your song is already included, starting at 0:18 of the original recording. You can replace it or add timed lyrics below.</p><label class="file-label">Choose audio<input id="audio-file" type="file" accept="audio/*"></label><label class="file-label">Import timed lyrics (.json or .lrc)<input id="lyrics-file" type="file" accept=".json,.lrc"></label><p class="setup-note">For a permanent setup, edit <code>content.js</code> and put your MP3 in <code>assets/</code>. Add your supplied lyrics in content.js or import a timed file.</p><p id="setup-status" role="status"></p></dialog>
+<script src="content.js"></script><script src="ascii.js"></script><script src="app.js"></script>
+</body></html>
